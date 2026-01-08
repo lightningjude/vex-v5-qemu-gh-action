@@ -10,6 +10,7 @@ RUN mkdir /vex-v5-qemu                                                          
   | tar zxf - -C /vex-v5-qemu --strip-components=1
 
 WORKDIR /vex-v5-qemu
+RUN cd packages/kernel; rustup update
 RUN cd packages/kernel; cargo build --target-dir /target/kernel
 
 RUN cd packages/client-cli; cargo install --path . --root /target/client-cli
