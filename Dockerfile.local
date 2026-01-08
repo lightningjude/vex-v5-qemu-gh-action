@@ -1,4 +1,6 @@
-FROM rust:1.83-bullseye AS rust-builder
+RUN rustup update
+
+FROM rust:1.92 AS rust-builder
 
 FROM rust-builder AS simulator
 
